@@ -1,0 +1,1 @@
+insert into users (username, password, firstname, lastname, email) values ('aquiroga', 'aquiroga', 'Alfredo', 'Quiroga', 'aquiroga@redhat.com');

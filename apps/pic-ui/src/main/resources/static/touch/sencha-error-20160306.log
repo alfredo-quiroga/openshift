@@ -1,0 +1,60 @@
+Sencha Cmd 6.1.0.65 - Crash report
+================================================
+An error occurred while executing the following command: --help
+
+Diagnostic information:
+=======================
+                    buildenvironment.dir : /backup/software/sencha-touch/touch-2.4.2         
+               buildenvironment.load.dir : /backup/software/sencha-touch/touch-2.4.2         
+                          cmd.config.dir : /Users/aquiroga/bin/Sencha/Cmd/6.1.0.65           
+                                 cmd.dir : /Users/aquiroga/bin/Sencha/Cmd/6.1.0.65           
+                    cmd.framework.minver : 2.2.0                                             
+                   cmd.framework.version : 2.99.99.99999                                     
+                            cmd.jvm.args : -Xms128m -Xmx1024m -Dapple.awt.UIElement=true     
+              cmd.merge.tool.args.araxis : -wait -merge -3 -a1 {base} {user} {generated} {out}
+              cmd.merge.tool.args.kdiff3 : {base} {user} {generated} -o {out}                
+             cmd.merge.tool.args.p4merge : {base} {user} {generated} {out}                   
+           cmd.merge.tool.args.smartsync : {user} {generated} {base}                         
+          cmd.merge.tool.args.sourcegear : --merge --result={out} {user} {base} {generated}  
+            cmd.merge.tool.args.tortoise : -base:{base} -theirs:{generated} -mine:{user} -merged:{out}
+                              cmd.minver : 3.0.0.0                                           
+                            cmd.platform : osx                                               
+                         cmd.server.port : 1841                                              
+                     cmd.unicode.escapes : /Users/aquiroga/bin/Sencha/Cmd/6.1.0.65/unicode-escapes.json
+                             cmd.version : 6.1.0.65                                          
+                            cmd.web.port : 1841                                              
+                     framework.classpath : /backup/software/sencha-touch/touch-2.4.2/src     
+                    framework.cmd.minver : 3.1.0.53                                          
+                   framework.cmd.version : 4.0.5.87                                          
+                    framework.config.dir : /Users/aquiroga/bin/Sencha/Cmd/6.1.0.65/plugins/touch/2.3
+                           framework.dir : /backup/software/sencha-touch/touch-2.4.2         
+                       framework.ignores : src/locale,src/platform,auth2/Auth.js,scroller/Infinite.js
+                          framework.name : touch                                             
+                  framework.packages.dir : /backup/software/sencha-touch/touch-2.4.2/packages
+             framework.preprocessor.opts : charts:no                                         
+                       framework.version : 2.4.2.571                                         
+                       inspector.address : http://localhost:1839/                            
+                          repo.local.dir : /Users/aquiroga/bin/Sencha/Cmd/repo               
+                      sencha.is.sdk.repo : 1                                                 
+        system.java.net.useSystemProxies : true                                              
+                               touch.dir : /backup/software/sencha-touch/touch-2.4.2         
+                     workspace.build.dir : /backup/software/sencha-touch/touch-2.4.2/build   
+                    workspace.config.dir : /backup/software/sencha-touch/touch-2.4.2/.sencha/workspace
+                           workspace.dir : /backup/software/sencha-touch/touch-2.4.2         
+                  workspace.packages.dir : /backup/software/sencha-touch/touch-2.4.2/packages
+
+Exception information:
+=======================
+No such property : help
+     at com.sencha.cli.AbstractCommand$Properties.getProperty(AbstractCommand.java:444)
+     at com.sencha.cli.AbstractCommand.parseConfigParam(AbstractCommand.java:468)
+     at com.sencha.cli.AbstractCommand.processConfigParam(AbstractCommand.java:518)
+     at com.sencha.cli.AbstractCommand.configure(AbstractCommand.java:114)
+     at com.sencha.command.Sencha.main(Sencha.java:135)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+     at java.lang.reflect.Method.invoke(Method.java:497)
+     at com.exe4j.runtime.LauncherEngine.launch(Unknown Source)
+     at com.install4j.runtime.launcher.UnixLauncher.main(Unknown Source)
+
