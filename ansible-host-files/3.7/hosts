@@ -51,8 +51,6 @@ openshift_hosted_etcd_storage_access_modes=["ReadWriteOnce"]
 openshift_hosted_etcd_storage_volume_size=1G
 openshift_hosted_etcd_storage_labels={'storage': 'etcd'}
 
-openshift_template_service_broker_namespaces=['openshift']
-
 openshift_master_default_subdomain=apps.oselab.com
 
 openshift_enable_service_catalog=false
