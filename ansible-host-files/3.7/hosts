@@ -26,7 +26,7 @@ openshift_metrics_storage_access_modes=['ReadWriteOnce']
 openshift_metrics_storage_nfs_directory=/exports
 openshift_metrics_storage_nfs_options='*(rw,root_squash)'
 openshift_metrics_storage_volume_name=metrics
-openshift_metrics_storage_volume_size=10Gi
+openshift_metrics_storage_volume_size=10G
 
 openshift_logging_install_logging=true
 openshift_logging_storage_kind=nfs
@@ -34,14 +34,14 @@ openshift_logging_storage_access_modes=['ReadWriteOnce']
 openshift_logging_storage_nfs_directory=/exports
 openshift_logging_storage_nfs_options='*(rw,root_squash)'
 openshift_logging_storage_volume_name=logging
-openshift_logging_storage_volume_size=10Gi
+openshift_logging_storage_volume_size=10G
 
 openshift_hosted_registry_storage_kind=nfs
 openshift_hosted_registry_storage_access_modes=['ReadWriteMany']
 openshift_hosted_registry_storage_nfs_directory=/exports
 openshift_hosted_registry_storage_nfs_options='*(rw,root_squash)'
 openshift_hosted_registry_storage_volume_name=registry
-openshift_hosted_registry_storage_volume_size=10Gi
+openshift_hosted_registry_storage_volume_size=10G
 
 openshift_hosted_etcd_storage_kind=nfs
 openshift_hosted_etcd_storage_nfs_options="*(rw,root_squash,sync,no_wdelay)"
