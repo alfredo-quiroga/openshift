@@ -26,22 +26,22 @@ openshift_metrics_storage_access_modes=['ReadWriteOnce']
 openshift_metrics_storage_nfs_directory=/exports
 openshift_metrics_storage_nfs_options='*(rw,root_squash)'
 openshift_metrics_storage_volume_name=metrics
-openshift_metrics_storage_volume_size=10Gi
+openshift_metrics_storage_volume_size=10G
 
-openshift_metrics_install_logging=true
+openshift_logging_install_logging=true
 openshift_logging_storage_kind=nfs
 openshift_logging_storage_access_modes=['ReadWriteOnce']
 openshift_logging_storage_nfs_directory=/exports
 openshift_logging_storage_nfs_options='*(rw,root_squash)'
 openshift_logging_storage_volume_name=logging
-openshift_logging_storage_volume_size=10Gi
+openshift_logging_storage_volume_size=10G
 
 openshift_hosted_registry_storage_kind=nfs
 openshift_hosted_registry_storage_access_modes=['ReadWriteMany']
 openshift_hosted_registry_storage_nfs_directory=/exports
 openshift_hosted_registry_storage_nfs_options='*(rw,root_squash)'
 openshift_hosted_registry_storage_volume_name=registry
-openshift_hosted_registry_storage_volume_size=10Gi
+openshift_hosted_registry_storage_volume_size=10G
 
 openshift_hosted_etcd_storage_kind=nfs
 openshift_hosted_etcd_storage_nfs_options="*(rw,root_squash,sync,no_wdelay)"
@@ -50,8 +50,6 @@ openshift_hosted_etcd_storage_volume_name=etcd-vol2
 openshift_hosted_etcd_storage_access_modes=["ReadWriteOnce"]
 openshift_hosted_etcd_storage_volume_size=1G
 openshift_hosted_etcd_storage_labels={'storage': 'etcd'}
-
-openshift_template_service_broker_namespaces=['openshift']
 
 openshift_master_default_subdomain=apps.oselab.com
 
