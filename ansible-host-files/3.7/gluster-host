@@ -1,0 +1,55 @@
+[OSEv3:children]
+masters
+nodes
+glusterfs
+
+[OSEv3:vars]
+deployment_type=openshift-enterprise
+containerized=true
+openshift_image_tag=v3.6.173.0.21
+openshift_master_identity_providers=[{'name': 'htpasswd', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+openshift_master_htpasswd_users={'developer': '$apr1$bKWroIXS$/xjq07zVg9XtH6/VKuh6r/','operator': '$apr1$bKWroIXS$/xjq07zVg9XtH6/VKuh6r/'}
+openshift_master_default_subdomain='cloudapps.35.169.212.176.nip.io'
+openshift_router_selector='role=master'
+openshift_registry_selector='role=infra'
+openshift_metrics_install_metrics=false
+openshift_metrics_hawkular_hostname="hawkular-metrics.{{ openshift_master_default_subdomain }}"
+openshift_metrics_cassandra_storage_type=pv
+openshift_metrics_cassandra_pvc_size=10Gi
+openshift_hosted_logging_deploy=false
+openshift_logging_es_pvc_size=10Gi
+openshift_logging_es_pvc_dynamic=true
+openshift_storage_glusterfs_namespace=app-storage
+openshift_storage_glusterfs_image=rhgs3/rhgs-server-rhel7
+openshift_storage_glusterfs_version=3.2.0-7
+openshift_storage_glusterfs_heketi_image=rhgs3/rhgs-volmanager-rhel7
+openshift_storage_glusterfs_heketi_version=3.2.0-11
+openshift_docker_additional_registries=mirror.lab:5555
+openshift_docker_insecure_registries=mirror.lab:5555
+oreg_url=mirror.lab:5555/openshift3/ose-${component}:${version}
+openshift_examples_modify_imagestreams=false
+openshift_disable_check=disk_availability,memory_availability
+
+[masters]
+master.lab openshift_public_hostname=35.169.212.176.nip.io openshift_hostname=master.lab openshift_ip=10.0.1.100 openshift_public_ip=35.169.212.176
+
+[masters:vars]
+openshift_schedulable=true
+openshift_node_labels="{'role': 'master'}"
+
+[nodes]
+master.lab openshift_public_hostname=35.169.212.176.nip.io openshift_hostname=master.lab openshift_ip=10.0.1.100 openshift_public_ip=35.169.212.176
+infra-1.lab openshift_hostname=infra-1.lab openshift_ip=10.0.2.101 openshift_node_labels="{'role': 'infra'}"
+infra-2.lab openshift_hostname=infra-2.lab openshift_ip=10.0.3.102 openshift_node_labels="{'role': 'infra'}"
+infra-3.lab openshift_hostname=infra-3.lab openshift_ip=10.0.4.103 openshift_node_labels="{'role': 'infra'}"
+node-1.lab openshift_hostname=node-1.lab openshift_ip=10.0.2.201 openshift_node_labels="{'role': 'app'}"
+node-2.lab openshift_hostname=node-2.lab openshift_ip=10.0.3.202 openshift_node_labels="{'role': 'app'}"
+node-3.lab openshift_hostname=node-3.lab openshift_ip=10.0.4.203 openshift_node_labels="{'role': 'app'}"
+node-4.lab openshift_hostname=node-4.lab openshift_ip=10.0.2.204 openshift_node_labels="{'role': 'app'}"
+node-5.lab openshift_hostname=node-5.lab openshift_ip=10.0.3.205 openshift_node_labels="{'role': 'app'}"
+node-6.lab openshift_hostname=node-6.lab openshift_ip=10.0.4.206 openshift_node_labels="{'role': 'app'}"
+
+[glusterfs]
+node-1.lab glusterfs_ip=10.0.2.201 glusterfs_zone=1 glusterfs_devices='[ "/dev/xvdc" ]'
+node-2.lab glusterfs_ip=10.0.3.202 glusterfs_zone=2 glusterfs_devices='[ "/dev/xvdc" ]'
+node-3.lab glusterfs_ip=10.0.4.203 glusterfs_zone=3 glusterfs_devices='[ "/dev/xvdc" ]'
